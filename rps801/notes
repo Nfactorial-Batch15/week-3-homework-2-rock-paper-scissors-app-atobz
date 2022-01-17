@@ -1,0 +1,46 @@
+
+
+
+Перекидывать переменные между вюшками
+https://stackoverflow.com/questions/56821737/swiftui-question-passing-a-variable-to-another-view
+
+
+
+
+SELF.$mychoice
+
+https://stackoverflow.com/questions/24215578/when-should-i-access-properties-with-self-in-swift
+
+The only times self is required are when referencing a property inside a closure and, as you pointed out, to differentiate it from local variable with the same name.
+
+However, personally, I prefer to always write "self" because:
+
+That is an instant and obvious sign that the variable is a property. This is important because it being a property means that its state can vary more widely and in different ways than a local variable. Also, changing a property has larger implications than changing a local variable.
+
+The code does not need to be updated if you decide to introduce a parameter or variable with the same name as the property
+
+Code can be easily copied in and out of closures that do require self
+
+
+
+
+
+
+    @Binding var mychoice: String
+    var body: some View {
+                
+                Text("\($mychoice)")
+                Text(mychoice)
+                Text($mychoice) - oshibka
+                Text(self.mychoice)
+                
+
+
+State - Binding - Binding - Binding
+
+
+
+
+animation transition
+save variable random value
+
